@@ -10,7 +10,8 @@ export default {
         primary : 'var(--color-primary)',
         primaryDull : "var(--color-primary-dull)",
         light : "var(--color-light)",
-        borderColor : "var(--color-border-color)"
+        borderColor : "var(--color-border-color)",
+        navText : "var(--color-nav)"
       }
     },
   },

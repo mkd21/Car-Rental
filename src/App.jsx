@@ -32,7 +32,7 @@ function App() {
           element: <AboutPage />
         },
         {
-          path: "/listcars",
+          path: "/my-bookings",
           element: <ListCars />
         },
         {
