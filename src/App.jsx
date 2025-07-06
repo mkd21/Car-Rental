@@ -6,7 +6,7 @@ import ListCars from "./components/list-cars/ListCarsPage.jsx";
 import SignUp from "./components/signup/SignUpPage.jsx";
 
 import AppOutlet from "./AppOutlet.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 
 import './App.css';
