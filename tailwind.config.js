@@ -12,7 +12,11 @@ export default {
         light : "var(--color-light)",
         borderColor : "var(--color-border-color)",
         navText : "var(--color-nav)"
-      }
+      },
+      fontFamily : {
+        outfit : ["Outfit", "sans-serif"],
+      },
+      
     },
   },
   plugins: [],
