@@ -41,6 +41,7 @@ import car_image2 from "./car_image2.png"
 import car_image3 from "./car_image3.png"
 import car_image4 from "./car_image4.png"
 import car_image5 from "./car_image5.png"
+import fiveStars from "./five_stars.png"
 
 export const cityList = ['New York', 'Los Angeles', 'Houston', 'Chicago']
 
@@ -87,7 +88,8 @@ export const assets = {
     car_image2,
     car_image3,
     car_image4,
-    car_image5
+    car_image5,
+    fiveStars
 }
 
 export const menuLinks = [
