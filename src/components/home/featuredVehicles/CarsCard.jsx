@@ -9,7 +9,7 @@ export default function CarsCard({ carImage, Car_Sitting_capacity, fuelType, tra
             <div className="rounded-[24px] overflow-hidden 
                 xl:w-[22rem] xl:pb-4  
                 max-md:mb-[3rem]
-                " style={{ boxShadow: "0 0 15px gray" }} >
+                " style={{boxShadow : "0 10px 15px #0000001A"}} >
 
                 {/* car image  */}
                 <div className=" xl:h-[60%]" >
