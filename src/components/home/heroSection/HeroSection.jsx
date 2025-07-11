@@ -52,7 +52,7 @@ export default function HeroSection() {
 
                     {/* form div  */}
 
-                    <div className=" max-md:w-[90%] xl:w-[80%] m-auto rounded-[34px] py-6 " style={{ boxShadow: "0px 0px 15px black" }} >
+                    <div className=" max-md:w-[90%] xl:w-[80%] m-auto rounded-[34px] py-6 " style={{ boxShadow: "#0000001A 0px 8px 20px" }} >
 
                         <form className=" flex max-md:flex-col max-md:items-center
                             xl:justify-around " onSubmit={formik.handleSubmit}
