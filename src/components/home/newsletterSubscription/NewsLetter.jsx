@@ -13,13 +13,13 @@ export default function NewsLetter() {
                     </div>
 
                     {/* search bar div  */}
-                    <div className="text-center max-md:mt-4 mt-[3rem]" >
+                    <div className="text-center max-md:mt-4 mt-[3rem] ">
                         <form>
 
                             <div className="max-md:flex max-md:flex-col max-md:justify-start xl:h-[5vh] " >
                                 <input type="email" placeholder="Enter your email address" 
                                     className=" border-2 border-[#C7C7C7] w-[60%] max-md:rounded-lg ps-8 max-md:w-full max-md:h-[5vh]
-                                        xl:h-full xl:rounded-s-lg " 
+                                        xl:w-[40%] xl:h-full xl:rounded-s-lg " 
                                 />
                                 <button type="submit" 
                                     className=" bg-[#2563EB] w-[18%] text-[#FFFFFF] max-md:rounded-lg  
