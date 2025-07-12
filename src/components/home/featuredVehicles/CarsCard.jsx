@@ -1,12 +1,15 @@
 
+import { useNavigate } from "react-router-dom";
+
 import { assets } from "../../../assets/all-assets/assets.js";
 
 export default function CarsCard({ _id, owner, brand, model, image, year, category, seating_capacity, fuel_type, transmission, pricePerDay, location, description, isAvaliable, createdAt }) {
 
+    const navigate = useNavigate();
     return (
         <>
             {/* car image  */}
-            <div className="rounded-[24px] overflow-hidden hover:cursor-pointer 
+            <div onClick={ () => navigate(`/car-details/${_id}`) }  className="rounded-[24px] overflow-hidden hover:cursor-pointer 
                 xl:w-[23rem] xl:pb-4 xl:h-[24rem] xl:mb-[3rem]
                 max-md:mb-[3rem]
                 " style={{boxShadow : "0 10px 15px #0000001A"}} >
