@@ -4,6 +4,16 @@ import { useParams, useNavigate } from "react-router-dom"
 
 import { assets, dummyCarData } from "../../assets/all-assets/assets.js";
 
+
+// dollar currency import 
+
+const currency = import.meta.env.VITE_CURRENCY;
+
+// react spinner 
+
+import {FadeLoader} from "react-spinners";
+
+
 export default function CarDetails() {
     const [cardetails, setCardetails] = useState(null);
     const { id } = useParams();
@@ -38,14 +48,15 @@ export default function CarDetails() {
         <>
             <section>
                 {/* parent div  */}
-                <div className="p-12 max-md:p-6" >
+                <div className="p-12 max-md:p-6 
+                    max-md:min-h-[34vh]"  >
 
                     {/* go back button  */}
                     <div className=" font-outfit text-[#6A7282] font-[400] h-8 flex items-center
                         xl:mb-4 
-                        max-md:mb-4 ">
+                        max-md:mb-4" onClick={handleGobackAction} >
                         <img src={assets.arrow_icon} alt="" className=" mr-4 " style={{ transform: "rotateY(180deg)" }} />
-                        <button onClick={handleGobackAction} >Back to all cars</button>
+                        <button>Back to all cars</button>
                     </div>
 
                     {
@@ -155,7 +166,7 @@ export default function CarDetails() {
                                     <div className=" font-[500] p-8 " >
                                         {/* rent of the car  */}
                                         <div className=" flex justify-between items-center mb-4" >
-                                            <p className="font-[600] text-[2rem] ">$299</p>
+                                            <p className="font-[600] text-[2rem] ">{ ` ${currency} ${cardetails.pricePerDay} ` }</p>
                                             <p className=" text-[#6A7282] text-[1.3rem] " >per day</p>
                                         </div>
 
@@ -185,11 +196,11 @@ export default function CarDetails() {
 
                         </div>
 
-                            :
+                        :
 
-                            <div>
-                                <h1>Loading Car Details..</h1>
-                            </div>
+                        <FadeLoader className=" m-auto mt-16 
+                           max-md:mt-[7rem] " />
+                            
                     }
 
                 </div>
