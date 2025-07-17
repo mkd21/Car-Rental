@@ -49,7 +49,7 @@ export default function CarDetails() {
             <section>
                 {/* parent div  */}
                 <div className="p-12 max-md:p-6 
-                    max-md:min-h-[34vh]"  >
+                    max-md:min-h-[34vh] ">
 
                     {/* go back button  */}
                     <div className=" font-outfit text-[#6A7282] font-[400] h-8 flex items-center
