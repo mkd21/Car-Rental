@@ -1,4 +1,5 @@
 
+import { useEffect, useState } from "react";
 import {assets} from "../../assets/all-assets/assets.js";
 
 import { dummyCarData } from "../../assets/all-assets/assets.js";
@@ -6,6 +7,10 @@ import CarsCard from "../home/featuredVehicles/CarsCard.jsx";
 
 export default function CarsPage()
 {
+    const [inputData , updateData] = useState("");
+
+    const handleChange = (receivedData) => updateData(receivedData);
+    
     return (
 
         <section>
@@ -25,6 +30,8 @@ export default function CarsPage()
                     <input type="text" placeholder="Search by make, model, or features" 
                         className="placeholder:font-outfit w-[90%] p-4 outline-none bg-transparent
                             placeholder:text-[0.9rem] " 
+                        value={inputData}
+                        onChange={ (e) => handleChange(e.target.value) }
                     />
                     <img src={assets.search_icon} alt="search icon" className=" hover:cursor-pointer absolute top-[20%] left-[90%] w-8 
                        max-md:w-[1.8rem] max-md:left-[86%] max-md:top-[25%] " />
