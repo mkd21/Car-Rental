@@ -1,8 +1,7 @@
 
 import HomePage from "./components/home/HomePage.jsx";
 import CarsPage from "./components/cars/CarsPage.jsx";
-import AboutPage from "./components/about/AboutPage.jsx";
-import ListCars from "./components/list-cars/ListCarsPage.jsx";
+import MyBookings from "./components/bookings/MyBookings.jsx";
 import SignUp from "./components/signup/SignUpPage.jsx";
 import CarDetails from "./components/cars/CarDetails.jsx";
 
@@ -33,12 +32,8 @@ function App() {
           element : <CarDetails />
         },
         {
-          path: "/about",
-          element: <AboutPage />
-        },
-        {
           path: "/my-bookings",
-          element: <ListCars />
+          element: <MyBookings />
         },
         {
           path: "/signup",
