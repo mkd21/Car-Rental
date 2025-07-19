@@ -8,8 +8,8 @@ export default function MyBookingsPage() {
 
         <section>
 
-            <div className=" font-outfit bg-green-200 
-                px-16  " >
+            <div className=" font-outfit px-16  
+                max-md:px-8 " >
                 {/* top div  */}
 
                 <div className="
@@ -21,9 +21,9 @@ export default function MyBookingsPage() {
 
 
                 {/* bottom div showing cars booked  */}
-                <div className=" bg-orange-300 " >
+                <div className=" " >
                     {
-                        dummyMyBookingsData.map( (iter) => <BookedCarsCard key={iter._id} carData = {iter}  /> )
+                        dummyMyBookingsData.map( (iter , index) => <BookedCarsCard key={iter._id} carData = {iter} indexOfEachCar = {index}  /> )
                     }
                 </div>
             </div>
