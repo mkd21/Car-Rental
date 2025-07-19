@@ -6,8 +6,12 @@ import SignUp from "./components/signup/SignUpPage.jsx";
 import CarDetails from "./components/cars/CarDetails.jsx";
 
 import AppOutlet from "./AppOutlet.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import OwnerLayout from "./components/owner/OwnerLayout.jsx";
+
+import DashBoard from "./components/owner/DashBoard.jsx";
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import './App.css';
 
@@ -38,6 +42,28 @@ function App() {
         {
           path: "/signup",
           element: <SignUp />
+        },
+        {
+          path : "/owner",
+          element : <OwnerLayout />,
+          children : [
+            {
+              index : true,
+              element : <DashBoard />
+            },
+            {
+              path : "add-car",
+              element : <AddCar />
+            },
+            {
+              path : "manage-car",
+              element : <ManageCar />
+            },
+            {
+              path : "manage-booking",
+              element : <ManageBooking />
+            }
+          ]
         }
       ]
     }
