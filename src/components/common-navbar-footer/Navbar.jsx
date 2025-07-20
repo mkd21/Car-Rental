@@ -1,11 +1,13 @@
 
 
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import { assets, menuLinks } from "../../assets/all-assets/assets.js";
 import { useState } from "react";
 
 export default function Navbar() {
     const [isMenuOpen, updateMenuState] = useState(false);
+
+    const navigate = useNavigate();
 
     const handleMenuDisplay = () => updateMenuState(!isMenuOpen);
 
@@ -39,7 +41,11 @@ export default function Navbar() {
 
                     {/* Buttons */}
                     <div className="flex max-md:flex-col max-md:w-[33%] m-auto xl:w-[25%] xl:justify-around ">
-                        <button className="font-[400] text-navText max-md:mb-[0.8rem]">Dashboard</button>
+                        
+                        <button className="font-[400] text-navText max-md:mb-[0.8rem]" onClick={ ()=> navigate("/owner") }>
+                            Dashboard
+                        </button>
+
                         <button className="bg-[#2563EB] text-white font-[500] xl:py-[0.4rem] xl:px-[1rem] rounded-lg">Login</button>
                     </div>
                 </div>
