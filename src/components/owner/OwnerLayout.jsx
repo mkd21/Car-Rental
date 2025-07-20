@@ -4,12 +4,13 @@ import SideBar from "./SideBar/SideBar";
 
 
 
-export default function OwnerLayout()
-{
+export default function OwnerLayout() {
     return (
         <>
-            <SideBar />
-            <Outlet />
+            <div className=" flex" >
+                <SideBar />
+                <Outlet />
+            </div>
         </>
     );
 }

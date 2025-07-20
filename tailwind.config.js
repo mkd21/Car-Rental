@@ -15,7 +15,8 @@ export default {
       },
       fontFamily : {
         outfit : ["Outfit", "sans-serif"],
-        roboto : ["roboto", "sans-serif"]
+        roboto : ["roboto", "sans-serif"],
+        inter : ["inter" , "sans-serif"]
       },
       
     },
