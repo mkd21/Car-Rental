@@ -27,7 +27,7 @@ function App() {
       element: <AppOutlet />,
       children: [
         {
-          index : true,
+          index: true,
           element: <HomePage />
         },
         {
@@ -35,8 +35,8 @@ function App() {
           element: <CarsPage />
         },
         {
-          path : "/car-details/:id",
-          element : <CarDetails />
+          path: "/car-details/:id",
+          element: <CarDetails />
         },
         {
           path: "/my-bookings",
@@ -46,27 +46,27 @@ function App() {
           path: "/signup",
           element: <SignUp />
         },
+      ]
+    },
+    {
+      path: "/owner",
+      element: <OwnerLayout />,
+      children: [
         {
-          path : "/owner",
-          element : <OwnerLayout />,
-          children : [
-            {
-              index : true,
-              element : <DashBoard />
-            },
-            {
-              path : "add-car",
-              element : <AddCar />
-            },
-            {
-              path : "manage-cars",
-              element : <ManageCar />
-            },
-            {
-              path : "manage-bookings",
-              element : <ManageBooking />
-            }
-          ]
+          index: true,
+          element: <DashBoard />
+        },
+        {
+          path: "add-car",
+          element: <AddCar />
+        },
+        {
+          path: "manage-cars",
+          element: <ManageCar />
+        },
+        {
+          path: "manage-bookings",
+          element: <ManageBooking />
         }
       ]
     }
