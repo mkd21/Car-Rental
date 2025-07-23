@@ -53,10 +53,10 @@ export default function DashBoard() {
 
 
             {/* recent booking and monthly revenue  */}
-            <div className=" bg-indigo-200 font-inter flex justify-around mt-8 " >
+            <div className="font-inter flex justify-around mt-8 " >
 
                 {/* recent bookings data  */}
-                <div className=" border-2 border-black p-4 w-[50%] "  >
+                <div className=" border-2 border-[#0000000D] p-4 w-[50%] rounded-lg " style={{ backgroundColor : "0 1px 2px" }} >
 
                     <div>
                         <h3 className=" text-[1.5rem] " >Recent Bookings</h3>
@@ -71,29 +71,29 @@ export default function DashBoard() {
                                 const { month, day, year } = ISOtoRequiredFormat(iter.pickupDate);
 
                                 return (
-                                    <div key={iter._id} className=" flex justify-between "  >
+                                    <div key={iter._id} className=" flex justify-between mt-3"  >
                                         {/* icon, car model and pickup date  */}
                                         <div>
-                                            <div className="" >
-                                                <img src={assets.listIconColored} alt="" />
+                                            <div >
+                                                <img src={assets.listIconColored} alt="" className=" " />
                                             </div>
 
                                             <div className=" " >
-                                                <p className=" font-[400] " >{`${iter.car.brand} ${iter.car.model}`}</p>
-                                                <p>{` ${month} / ${day} / ${year} `}</p>
+                                                <p className=" font-[400] text-[1.3rem] " >{`${iter.car.brand} ${iter.car.model}`}</p>
+                                                <p className=" text-[#64748B] text-[0.9rem] " >{` ${month} / ${day} / ${year} `}</p>
                                             </div>
 
                                         </div>
 
                                         {/* amount and booking status  */}
-                                        <div className=" w-[20%] " >
+                                        <div className=" w-[30%] " >
                                             {/* amount  */}
                                             <div>
-                                                <p> {`$ ${iter.price}`} </p>
+                                                <p className=" text-[#64748B] font-[500] " > {`$ ${iter.price}`} </p>
                                             </div>
 
                                             {/* booking status  */}
-                                            <div>
+                                            <div className=" border-[#E2E8F0] border-2 p-1 text-center rounded-full font-[500] " >
                                                 <p> {` ${iter.status} `} </p>
                                             </div>
                                         </div>
@@ -106,14 +106,14 @@ export default function DashBoard() {
                 </div>
 
                 {/* monthly revenue  */}
-                <div className=" border-2 border-black " >
+                <div className=" border-2 border-[#0000000D] w-[30%] p-5 rounded-lg " style={{ backgroundColor : "0 1px 2px" }}>
 
                     <div>
-                        <h3>Monthly Revenue</h3>
-                        <p>Revenue for current month</p>
+                        <h3 className=" text-[1.3rem] font-[500] " >Monthly Revenue</h3>
+                        <p className=" text-[#64748B] " >Revenue for current month</p>
                     </div>
                     
-                    <div>
+                    <div className=" mt-[3rem] text-[#2563EB] text-[3rem] font-[700] " >
                         <p> {` $ ${dummyDashboardData.monthlyRevenue} `} </p>
                     </div>
 
