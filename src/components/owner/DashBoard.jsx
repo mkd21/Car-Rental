@@ -11,6 +11,7 @@ const bookingRelatedData = [
 ];
 
 
+
 export default function DashBoard() {
 
     return (
@@ -55,6 +56,7 @@ export default function DashBoard() {
                         <p>Latest customer bookings</p>
                     </div>
 
+                    {/* model icon and pickup date  */}
                     <div>
                         {
                             dummyDashboardData.recentBookings.map(iter =>
@@ -66,7 +68,7 @@ export default function DashBoard() {
                                         </div>
 
                                         <div>
-                                            <p></p>
+                                            <p>{`${iter.car.brand} ${iter.car.model}`}</p>
                                             <p></p>
                                         </div>
 
@@ -80,7 +82,7 @@ export default function DashBoard() {
                     </div>
                 </div>
 
-                {/* total revenue  */}
+                {/* monthly revenue  */}
                 <div className=" border-2 border-black " >
                     <h3>Monthly Revenue</h3>
                 </div>
