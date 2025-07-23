@@ -10,9 +10,16 @@ const bookingRelatedData = [
     { Label: "Completed Booking", LabelCount: dummyDashboardData.completedBookings, LabelIcon: assets.listIconColored }
 ];
 
+const ISOtoRequiredFormat = (receivedDateAndTime) => {
+
+    const date = receivedDateAndTime.split("T")[0].split("-")
+
+    return { month: date[1], day: date[2], year: date[0] };
+}
 
 
 export default function DashBoard() {
+
 
     return (
 
@@ -28,7 +35,7 @@ export default function DashBoard() {
             <div className=" flex mt-8" >
                 {
                     bookingRelatedData.map(iter =>
-                        <div className=" border-2 border-[#DDE1EE] flex justify-around items-center w-[23%] me-3 rounded-md py-4">
+                        <div key={iter.Label} className=" border-2 border-[#DDE1EE] flex justify-around items-center w-[23%] me-3 rounded-md py-4">
                             {/* details  */}
                             <div>
                                 <p>{iter.Label}</p>
@@ -46,45 +53,70 @@ export default function DashBoard() {
 
 
             {/* recent booking and monthly revenue  */}
-            <div className=" bg-indigo-200 flex " >
+            <div className=" bg-indigo-200 font-inter flex justify-around mt-8 " >
 
                 {/* recent bookings data  */}
-                <div className=" border-2 border-black "  >
+                <div className=" border-2 border-black p-4 w-[50%] "  >
 
                     <div>
-                        <h3>Recent Bookings</h3>
-                        <p>Latest customer bookings</p>
+                        <h3 className=" text-[1.5rem] " >Recent Bookings</h3>
+                        <p className=" text-[#64748B] text-[0.9rem] " >Latest customer bookings</p>
                     </div>
 
                     {/* model icon and pickup date  */}
-                    <div>
+                    <div className=" mt-4 " >
                         {
-                            dummyDashboardData.recentBookings.map(iter =>
-                                <div>
-                                    {/* icon, car model and pickup date  */}
-                                    <div>
+                            dummyDashboardData.recentBookings.map((iter) => {
+
+                                const { month, day, year } = ISOtoRequiredFormat(iter.pickupDate);
+
+                                return (
+                                    <div key={iter._id} className=" flex justify-between "  >
+                                        {/* icon, car model and pickup date  */}
                                         <div>
-                                            <img src={assets.listIconColored} alt="" />
+                                            <div className="" >
+                                                <img src={assets.listIconColored} alt="" />
+                                            </div>
+
+                                            <div className=" " >
+                                                <p className=" font-[400] " >{`${iter.car.brand} ${iter.car.model}`}</p>
+                                                <p>{` ${month} / ${day} / ${year} `}</p>
+                                            </div>
+
                                         </div>
 
-                                        <div>
-                                            <p>{`${iter.car.brand} ${iter.car.model}`}</p>
-                                            <p></p>
-                                        </div>
+                                        {/* amount and booking status  */}
+                                        <div className=" w-[20%] " >
+                                            {/* amount  */}
+                                            <div>
+                                                <p> {`$ ${iter.price}`} </p>
+                                            </div>
 
+                                            {/* booking status  */}
+                                            <div>
+                                                <p> {` ${iter.status} `} </p>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    {/* amount and booking status  */}
-                                    <div></div>
-                                </div>
-                            )
+                                )
+                            })
                         }
                     </div>
                 </div>
 
                 {/* monthly revenue  */}
                 <div className=" border-2 border-black " >
-                    <h3>Monthly Revenue</h3>
+
+                    <div>
+                        <h3>Monthly Revenue</h3>
+                        <p>Revenue for current month</p>
+                    </div>
+                    
+                    <div>
+                        <p> {` $ ${dummyDashboardData.monthlyRevenue} `} </p>
+                    </div>
+
                 </div>
             </div>
         </div>
