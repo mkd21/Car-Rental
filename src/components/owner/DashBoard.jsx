@@ -17,6 +17,7 @@ const ISOtoRequiredFormat = (receivedDateAndTime) => {
     return { month: date[1], day: date[2], year: date[0] };
 }
 
+const currency = import.meta.env.VITE_CURRENCY; 
 
 export default function DashBoard() {
 
@@ -118,7 +119,7 @@ export default function DashBoard() {
                     </div>
                     
                     <div className=" mt-[3rem] text-[#2563EB] text-[3rem] font-[700] " >
-                        <p> {` $ ${dummyDashboardData.monthlyRevenue} `} </p>
+                        <p> {` ${currency} ${dummyDashboardData.monthlyRevenue} `} </p>
                     </div>
 
                 </div>
