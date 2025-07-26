@@ -10,7 +10,7 @@ import AppOutlet from "./AppOutlet.jsx";
 import OwnerLayout from "./components/owner/OwnerLayout.jsx";
 
 import DashBoard from "./components/owner/DashBoard.jsx";
-import AddCar from "./components/owner/AddCar.jsx";
+import AddCar from "./components/owner/addCar/AddCar.jsx";
 import ManageCar from "./components/owner/ManageCar.jsx";
 import ManageBooking from "./components/owner/ManageBooking.jsx";
 
